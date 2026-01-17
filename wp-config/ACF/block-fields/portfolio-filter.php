@@ -1,0 +1,133 @@
+<?php
+add_action( 'acf/include_fields', function() {
+    if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+        return;
+    }
+
+    acf_add_local_field_group( array(
+        'key' => 'group_portfolio_filter',
+        'title' => 'Portfolio Filter',
+        'fields' => array(
+            array(
+                'key' => 'field_portfolio_filter',
+                'label' => 'Portfolio Filter',
+                'name' => 'portfolio_filter',
+                'aria-label' => '',
+                'type' => 'group',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'layout' => 'block',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_portfolio_filter_filters',
+                        'label' => 'Filters',
+                        'name' => 'filters',
+                        'aria-label' => '',
+                        'type' => 'repeater',
+                        'instructions' => 'Add filter buttons for portfolio categories',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'layout' => 'table',
+                        'pagination' => 0,
+                        'min' => 0,
+                        'max' => 0,
+                        'collapsed' => '',
+                        'button_label' => 'Add Filter',
+                        'rows_per_page' => 20,
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_portfolio_filter_label',
+                                'label' => 'Label',
+                                'name' => 'label',
+                                'aria-label' => '',
+                                'type' => 'text',
+                                'instructions' => 'Filter button label',
+                                'required' => 1,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'maxlength' => '',
+                                'placeholder' => 'Show All',
+                                'prepend' => '',
+                                'append' => '',
+                            ),
+                            array(
+                                'key' => 'field_portfolio_filter_class',
+                                'label' => 'Filter Class',
+                                'name' => 'filter_class',
+                                'aria-label' => '',
+                                'type' => 'text',
+                                'instructions' => 'Use * for Show All, or .classname for categories',
+                                'required' => 1,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '*',
+                                'maxlength' => '',
+                                'placeholder' => '*',
+                                'prepend' => '',
+                                'append' => '',
+                            ),
+                            array(
+                                'key' => 'field_portfolio_filter_is_active',
+                                'label' => 'Active',
+                                'name' => 'is_active',
+                                'aria-label' => '',
+                                'type' => 'true_false',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'message' => '',
+                                'default_value' => 0,
+                                'ui_on_text' => '',
+                                'ui_off_text' => '',
+                                'ui' => 1,
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/portfolio-filter',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ) );
+} );

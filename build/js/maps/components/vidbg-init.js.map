@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/vidbg-init.js"],"names":["jQuery","document","ready","$","vidbg"],"mappings":"AAAAA,OAAOC,UAAUC,MAAM,SAASC,GAC5BA,EAAE,mBAAmBC","sourcesContent":["jQuery(document).ready(function($) {\n    $('.s-video-v2__bg').vidbg();\n});\n"],"file":"../../components/vidbg-init.js"}

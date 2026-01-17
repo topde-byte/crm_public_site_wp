@@ -1,0 +1,2 @@
+var Counter=function(){"use strict";return{init:function(){$(".js__counter").counterUp()}}}();$(document).ready(function(){Counter.init()});
+//# sourceMappingURL=../maps/components/counter.js.map

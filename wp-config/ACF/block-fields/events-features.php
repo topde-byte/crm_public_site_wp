@@ -1,0 +1,137 @@
+<?php
+add_action( 'acf/include_fields', function() {
+    if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+        return;
+    }
+
+    acf_add_local_field_group( array(
+        'key' => 'group_events_features',
+        'title' => 'Events Features',
+        'fields' => array(
+            array(
+                'key' => 'field_events_features',
+                'label' => 'Features',
+                'name' => 'features',
+                'aria-label' => '',
+                'type' => 'group',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'layout' => 'block',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_events_features_list',
+                        'label' => 'Features List',
+                        'name' => 'features_list',
+                        'aria-label' => '',
+                        'type' => 'repeater',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'layout' => 'block',
+                        'pagination' => 0,
+                        'min' => 0,
+                        'max' => 0,
+                        'collapsed' => '',
+                        'button_label' => 'Add Feature',
+                        'rows_per_page' => 20,
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_events_feature_icon',
+                                'label' => 'Icon Class',
+                                'name' => 'icon_class',
+                                'aria-label' => '',
+                                'type' => 'text',
+                                'instructions' => 'CSS icon class (e.g., ti-desktop, ti-settings, ti-ruler-alt-2)',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'maxlength' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'parent_repeater' => 'field_events_features_list',
+                            ),
+                            array(
+                                'key' => 'field_events_feature_title',
+                                'label' => 'Title',
+                                'name' => 'title',
+                                'aria-label' => '',
+                                'type' => 'text',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'maxlength' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'parent_repeater' => 'field_events_features_list',
+                            ),
+                            array(
+                                'key' => 'field_events_feature_description',
+                                'label' => 'Description',
+                                'name' => 'description',
+                                'aria-label' => '',
+                                'type' => 'textarea',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'maxlength' => '',
+                                'rows' => 3,
+                                'placeholder' => '',
+                                'new_lines' => '',
+                                'parent_repeater' => 'field_events_features_list',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/events-features',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ) );
+} );
+

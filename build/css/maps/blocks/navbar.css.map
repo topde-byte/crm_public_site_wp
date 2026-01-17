@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/navbar.scss"],"names":[],"mappings":"AAAA,uCACE,eACA,QACA,OACA","file":"../../blocks/navbar.css","sourcesContent":[".navbar-fixed-bottom,.navbar-fixed-top {\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1030\n}"]}
