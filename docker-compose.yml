@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: ${WP_DB}
+      MYSQL_USER: ${WP_USER}
+      MYSQL_PASSWORD: ${WP_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${WP_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - crm_public_site-network
+
+  wordpress:
+    image: wordpress:6.8.2-php8.2-apache
+    depends_on:
+      - db
+    ports:
+      - "8082:80"
+    env_file:
+      - .env
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      - crm_public_site-network
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    depends_on:
+      - db
+    ports:
+      - "8083:80"
+    env_file:
+      - .env
+    networks:
+      - crm_public_site-network
+
+volumes:
+  db_data:
+
+networks:
+  crm_public_site-network:
+    driver: bridge
