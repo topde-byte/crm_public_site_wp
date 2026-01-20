@@ -1,2 +1,0 @@
-var ProgressBar=function(){"use strict";return{init:function(){$(document).ready(function(){$(".progress").each(function(){$(this).appear(function(){$(this).animate({opacity:1,left:"0"},800);var t=$(this).find(".progress-bar").attr("data-width"),r=$(this).find(".progress-bar").attr("data-height");$(this).find(".progress-bar").animate({width:t+"%",height:r+"%"},100,"linear")})})})}}}();$(document).ready(function(){ProgressBar.init()});
-//# sourceMappingURL=../maps/components/progress-bar.js.map

@@ -1,2 +1,0 @@
-var Scrollbar=function(){"use strict";return{init:function(){$(".js__scrollbar").mCustomScrollbar({theme:"minimal"})}}}();$(document).ready(function(){Scrollbar.init()});
-//# sourceMappingURL=../maps/components/scrollbar.js.map

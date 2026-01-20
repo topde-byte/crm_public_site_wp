@@ -1,2 +1,0 @@
-var Masonry=function(){"use strict";return{init:function(){var n;(n=$(".js__masonry")).imagesLoaded(function(){n.masonry({itemSelector:".js__masonry-item",columnWidth:".js__masonry-sizer",percentPosition:!0})}),$.fn.masonryImagesReveal=function(n){var e=this.data("masonry"),t=e.options.itemSelector;return n.hide(),this.append(n),n.imagesLoaded().progress(function(n,i){var o=$(i.img).parents(t);o.show(),e.appended(o)}),this}}}}();$(document).ready(function(){Masonry.init()});
-//# sourceMappingURL=../maps/components/masonry.js.map
