@@ -81,13 +81,24 @@ function megakit_enqueue_assets() {
         true
     );
 
-//    wp_enqueue_script(
-//        'theme-wow',
-//        $theme . '/build/js/components/wow.js',
-//        ['vendor-jquery'],
-//        filemtime($path . '/build/js/components/wow.js'),
-//        true
-//    );
+    // WOW.js library (CDN)
+    wp_register_script(
+        'wow-library',
+        'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js',
+        [],
+        '1.1.2',
+        true
+    );
+    wp_enqueue_script('wow-library');
+
+    // WOW.js initialization
+    wp_enqueue_script(
+        'theme-wow',
+        $theme . '/build/js/components/wow.js',
+        ['vendor-jquery', 'wow-library'],
+        filemtime($path . '/build/js/components/wow.js'),
+        true
+    );
 
     wp_enqueue_script(
         'vendor-bootstrap',
